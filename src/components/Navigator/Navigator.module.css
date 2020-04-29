@@ -1,0 +1,47 @@
+.NavWrapper {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* background: white; */
+  padding: 0 15px;
+  z-index: 1000;
+}
+
+.NavWrapper a {
+  text-decoration: none;
+}
+
+.AnchorCont {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background-color: black; */
+}
+
+.White {
+  color: white;
+  background-color: black;
+}
+
+.Black {
+  color: black;
+}
+
+.AnchorCont a {
+  padding: 15px;
+  height: 100%;
+  transition: background-color 0.4s ease-out;
+  transition: color 0.3s ease-out;
+  text-decoration: none;
+  /* margin: 0 1px; */
+  background-position: -80%;
+}
+
+.AnchorCont a:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}

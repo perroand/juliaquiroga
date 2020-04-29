@@ -1,0 +1,175 @@
+.Slider {
+  position: fixed;
+  z-index: 1001;
+  height: 100vh;
+  /* height: 700px !important; */
+  /* width: 100%; */
+  /* margin: auto; */
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.7s ease-out;
+  right: 0;
+  transform: translateX(200vw);
+}
+
+.SliderMove {
+  transform: translateX(0);
+  /* transition: all 0.7s ease-out; */
+  /* right: 0; */
+}
+
+.imgSlider {
+  /* background-repeat: "no-repeat";
+  background-position: "center"; */
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+}
+
+.Cont {
+  margin-left: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  background-color: white;
+  z-index: 1;
+  overflow: scroll;
+
+  /* transition: all 1s ease-out; */
+}
+
+.Exitbtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* margin: 2px; */
+  font-size: 1.3rem;
+  /* border: 1px solid black; */
+  color: white;
+  background-color: black;
+  padding: 3px 10px;
+  font-family: "heebo";
+  /* font-weight: 300; */
+  visibility: hidden;
+}
+
+.SliderCont {
+  width: 62%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  /* padding-top: 75px; */
+}
+
+.Description {
+  width: 38%;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  /* padding: 0 15px; */
+  /* transition: transform 2.5s ease-out;
+  transition: opacity 7s ease-out; */
+}
+
+.imgContainer {
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* border: 5px solid black; */
+}
+
+.DescriptionAlt {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.textContainer {
+  height: 15%;
+  text-align: right;
+  /* transition-delay: 1s; */
+  /* transition: opacity 1s cubic-bezier(0.2, 1.06, 0.97, 1.01); */
+}
+
+.textContainer h1 {
+  color: white;
+  padding-top: 15px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  /* background-color: black; */
+}
+
+.Tags {
+  font-size: 0.9rem;
+  text-align: right;
+  margin: 15px 0 0 auto;
+  width: 70%;
+  height: 30%;
+}
+
+@media only screen and (max-width: 600px) {
+  .Slider {
+    width: 100%;
+    height: auto;
+  }
+  .Cont {
+    height: auto;
+
+    flex-direction: column;
+  }
+  .SliderCont {
+    order: 2;
+    width: 90%;
+    height: 60%;
+  }
+  .Tags {
+    font-size: 0.6rem;
+  }
+  .imgContainer {
+    height: 150px;
+    width: 70%;
+    margin: 40px auto;
+    font-size: 0.5rem;
+  }
+  .imgSlider {
+    height: 300px;
+  }
+  .Description {
+    order: 1;
+    width: 90%;
+    flex-direction: column;
+    height: 40%;
+  }
+  .textContainer {
+    margin: auto;
+    width: 100%;
+  }
+
+  .textContainer h1 {
+    font-size: 2rem;
+  }
+
+  .textContainer h3 {
+    font-size: 1rem;
+  }
+
+  .DescriptionAlt {
+    font-size: 0.3rem;
+  }
+  .Exitbtn {
+    visibility: visible;
+  }
+}

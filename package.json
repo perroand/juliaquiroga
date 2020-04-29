@@ -6,8 +6,14 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "flat-carousel": "0.0.1",
+    "node-sass": "^4.13.1",
+    "nuka-carousel": "^4.6.6",
     "react": "^16.13.1",
+    "react-animated-slider": "^2.0.0",
+    "react-awesome-slider": "^4.1.0",
     "react-dom": "^16.13.1",
+    "react-responsive-carousel": "^3.2.4",
     "react-scripts": "3.4.1"
   },
   "scripts": {

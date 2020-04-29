@@ -28,6 +28,10 @@
   color: #61dafb;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +39,43 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* ////SLIDER */
+
+.control-dots {
+  padding: 0 !important;
+  margin-bottom: 0px !important;
+}
+
+.dot {
+  background: black !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+.dot.selected:focus,
+.dot:active {
+  outline: none;
+}
+
+.control.next::before {
+  border: none;
+}
+.carousel .control-arrow:before,
+.carousel.carousel-slider .control-arrow:before {
+  margin: 0 5px 0 5px !important;
+  border: solid white !important;
+  border-width: 0 3px 3px 0 !important;
+  display: inline-block !important;
+  padding: 6px 6px;
+}
+
+.control-next::before {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.control-prev::before {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }

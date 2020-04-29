@@ -1,0 +1,47 @@
+.Manifiesto {
+  height: 100vh;
+  /* background: linear-gradient(
+      -45deg,
+      rgb(71, 15, 15) 0%,
+      rgb(71, 15, 15) 90%,
+      transparent 27%
+    ),
+    linear-gradient(
+      -45deg,
+      rgb(94, 20, 20) 0%,
+      rgb(94, 20, 20) 90.5%,
+      transparent 27%
+    ); */
+  color: rgb(71, 15, 15);
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+  /* padding: 30px 0; */
+}
+
+.Title {
+  width: 30%;
+  height: 100%;
+  background-color: rgb(71, 15, 15);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+}
+
+.Title h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  height: auto;
+  /* margin: auto 0; */
+}
+
+.Manifiesto p {
+  width: 30%;
+  text-align: right;
+  line-height: 1.3rem;
+}
