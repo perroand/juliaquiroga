@@ -19,36 +19,40 @@ import "../../../node_modules/react-responsive-carousel/lib/styles/carousel.css"
 // import "react-awesome-slider/dist/styles.css";
 
 const Slider = (props) => {
-  let [imgArray, setImgArray] = useState([]);
+  const [imgArray, setImgArray] = useState([props.projArr.img]);
 
-  // useEffect(() => {
-  //   if (props.mobileArr && props.projArr.img.length > 0) {
-  //     setImgArray(props.projArr.img.push(props.projArr.plano));
-  //   }
-  // }, [props.mobileArr, props.projArr.img.length]);
+  useEffect(() => {
+    if (window.innerWidth < 1030 && props.show) {
+      setImgArray(props.projArr["img"].push(props.projArr.plano));
+    } else {
+      setImgArray(props.projArr.img);
+    }
+  }, [props.show]);
 
-  console.log(imgArray);
+  let images = null;
 
-  const images = props.projArr.img.map((el, index) => {
-    const containPicsProjects = [
-      "concurso",
-      "anchorena 6M",
-      "universidad de buenos aires",
-      "instituto de arquitectura avanzada",
-    ];
-    return (
-      <div
-        className={classes.imgSlider}
-        style={{
-          backgroundImage: `url(${el})`,
-          backgroundSize: containPicsProjects.includes(props.projArr.title)
-            ? "contain"
-            : "cover",
-        }}
-        key={index}
-      ></div>
-    );
-  });
+  if (imgArray.length > 0 && props.show) {
+    images = imgArray.map((el, index) => {
+      const containPicsProjects = [
+        "concurso",
+        "anchorena 6M",
+        "universidad de buenos aires",
+        "instituto de arquitectura avanzada",
+      ];
+      return (
+        <div
+          className={classes.imgSlider}
+          style={{
+            backgroundImage: `url(${el})`,
+            backgroundSize: containPicsProjects.includes(props.projArr.title)
+              ? "contain"
+              : "cover",
+          }}
+          key={index}
+        ></div>
+      );
+    });
+  }
 
   let web = "";
   let textoConcurso = "";
