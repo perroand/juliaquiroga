@@ -22,24 +22,24 @@ function App() {
     img: [],
   });
   const [modalWidth, setModalWidth] = useState(null);
-  const [projectsTop, setProjectsTop] = useState([]);
+  const [projectsTop] = useState([]);
   // const [offsetTop, setOffsetTop] = useState(0);
   const [colorNav, setColorNav] = useState(false);
   const [widthMobile, setWidthMobile] = useState(false);
 
-  window.addEventListener("scroll", () => {
-    if (window.pageYOffset >= topsArr[1] && window.pageYOffset < topsArr[2]) {
-      setColorNav(true);
-    } else {
-      setColorNav(false);
-    }
-  });
-
-  const handlerModalWidth = (width, top) => {
+  const handlerModalWidth = (width, top, name) => {
+    if (!name) return;
     if (width !== null) {
       setModalWidth(width);
     }
-    projectsTop.push(top);
+    // projectsTop[name === "inSitu" ? 0 : 1] = top;
+    if (name === "inSitu") {
+      projectsTop[0] = top;
+    } else if (name === "tabula") {
+      projectsTop[1] = top;
+    } else {
+      projectsTop[2] = top;
+    }
   };
 
   let topsArr = [...new Set(projectsTop)].filter((el) => el !== null);
@@ -55,6 +55,14 @@ function App() {
     setSelectedProj(projectList[1][key]);
     window.scrollTo({ top: topsArr[1], behavior: "smooth" });
   };
+
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset >= topsArr[1] && window.pageYOffset < topsArr[2]) {
+      setColorNav(true);
+    } else {
+      setColorNav(false);
+    }
+  });
 
   useEffect(() => {
     if (showModal) {
@@ -94,7 +102,7 @@ function App() {
         }
         proj={projectList[0]}
         click={modalOpenInSitu}
-        getModalWidth={handlerModalWidth}
+        getModalWidth={(width, top) => handlerModalWidth(width, top, "inSitu")}
         color="White"
       />
       <Projects
@@ -105,10 +113,12 @@ function App() {
         }
         proj={projectList[1]}
         click={modalOpenTabula}
-        getModalWidth={handlerModalWidth}
+        getModalWidth={(width, top) => handlerModalWidth(width, top, "tabula")}
         color="Black"
       />
-      <Contact getModalWidth={handlerModalWidth} />
+      <Contact
+        getModalWidth={(width, top) => handlerModalWidth(width, top, "contact")}
+      />
     </div>
   );
 }

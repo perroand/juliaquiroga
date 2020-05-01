@@ -19,14 +19,16 @@ import "../../../node_modules/react-responsive-carousel/lib/styles/carousel.css"
 // import "react-awesome-slider/dist/styles.css";
 
 const Slider = (props) => {
-  const [imgArray, setImgArray] = useState([props.projArr.img]);
+  const [imgArray, setImgArray] = useState([]);
 
   useEffect(() => {
     if (window.innerWidth < 1030 && props.show) {
-      setImgArray(props.projArr["img"].push(props.projArr.plano));
+      let arrconplano = [...props.projArr.img, props.projArr.plano];
+      setImgArray(arrconplano);
     } else {
       setImgArray(props.projArr.img);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.show]);
 
   let images = null;
@@ -39,6 +41,20 @@ const Slider = (props) => {
         "universidad de buenos aires",
         "instituto de arquitectura avanzada",
       ];
+
+      if (window.innerWidth < 1030 && index === imgArray.length - 1) {
+        return (
+          <div
+            className={classes.imgSlider}
+            style={{
+              backgroundImage: `url(${el})`,
+              backgroundSize: "contain",
+            }}
+            key={index}
+          ></div>
+        );
+      }
+
       return (
         <div
           className={classes.imgSlider}
@@ -94,13 +110,32 @@ const Slider = (props) => {
         </p>
       );
     });
+  } else if (props.projArr.title === "instituto de arquitectura avanzada") {
+    tags = (
+      <p className={classes.DescriptionAlt}>
+        <span>
+          <b>
+            <em>Construïm</em>
+          </b>
+        </span>
+        {props.projArr.description}
+      </p>
+    );
+  } else if (props.projArr.title === "universidad de buenos aires") {
+    tags = (
+      <p className={classes.DescriptionAlt}>
+        <span>
+          <b>CIUDAD EVITA - DIAGRAMA</b>
+        </span>{" "}
+        <br />
+        {props.projArr.description}
+      </p>
+    );
   } else {
     tags = (
       <p className={classes.DescriptionAlt}>{props.projArr.description}</p>
     );
   }
-
-  // console.log(tags);
 
   return (
     <div

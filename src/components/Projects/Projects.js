@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useLayoutEffect } from "react";
 
 import classes from "./Projects.module.css";
 import Project from "./Project/Project";
@@ -12,7 +12,17 @@ const Projects = (props) => {
   const modalContRef = useRef();
   const [modalWidth, setModalWidth] = useState(null);
   const [projectsTop, setProjectsTop] = useState(null);
+  const [windowWidth, setWindowWidth] = useState(0);
   let topsArr = [];
+
+  useLayoutEffect(() => {
+    function updateWindowWidth() {
+      setWindowWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", updateWindowWidth);
+    updateWindowWidth();
+    return () => window.removeEventListener("resize", updateWindowWidth);
+  }, []);
 
   useEffect(() => {
     setModalWidth(modalContRef.current.offsetWidth);
@@ -20,7 +30,7 @@ const Projects = (props) => {
     if (modalContRef.current.offsetWidth) {
       props.getModalWidth(modalWidth, projectsTop);
     }
-  }, [modalContRef, props, modalWidth, projectsTop, topsArr]);
+  }, [modalContRef, props, modalWidth, projectsTop, topsArr, windowWidth]);
 
   if (props.proj) {
     projectsDisplay = props.proj.map((el, ind) => {
@@ -36,7 +46,6 @@ const Projects = (props) => {
       );
     });
   }
-  // console.log(props);
   return (
     <div
       id={props.title === "in situ.-" ? "obras" : "proyectos"}

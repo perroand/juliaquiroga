@@ -286,7 +286,7 @@ const tabulaRasa = [
     title: "instituto de arquitectura avanzada",
     subtitle: "Master in Design for Emergent Futures",
     description:
-      "Construïm is a new interface for the collection of data as images that aims to change the methodology of co-creation in participatory design for public spaces.",
+      " is a new interface for the collection of data as images that aims to change the methodology of co-creation in participatory design for public spaces.",
     portada: TRproj4_PORTADA,
     plano: TRproj4_PLANTA,
     img: [
