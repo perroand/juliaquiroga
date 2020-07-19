@@ -7,7 +7,7 @@ import Slider from "./views/Slider/Slider";
 import Backdrop from "./views/Slider/Backdrop/Backdrop";
 import Contact from "./views/Contact/Contact";
 
-import projectList from "./hoc/projectList";
+import projectList from "./projectsSetup/projectList";
 
 import Navigator from "./views/Nav/Nav";
 
