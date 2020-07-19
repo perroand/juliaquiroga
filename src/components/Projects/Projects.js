@@ -2,7 +2,6 @@ import React, { useRef, useEffect, useState, useLayoutEffect } from "react";
 
 import classes from "./Projects.module.css";
 import Project from "./Project/Project";
-// import Slider from "../Slider/Slider";
 
 const Projects = (props) => {
   const projectsRef = useRef();
