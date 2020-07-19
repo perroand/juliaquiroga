@@ -13,9 +13,7 @@
 }
 
 .Footer {
-  /* position: sticky; */
   height: 5%;
-  /* bottom: 0; */
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -24,13 +22,8 @@
 
 .Footer p {
   height: 100%;
-
   padding: 10px 3px;
   background-color: black;
-
-  /* -webkit-box-shadow: 0px -4px 9px -3px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px -4px 9px -3px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px -4px 9px -3px rgba(0, 0, 0, 0.75); */
 }
 
 .DataContainer {
@@ -41,7 +34,6 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
-  /* padding: 30px; */
 }
 
 .DataContainer a {
@@ -59,7 +51,6 @@
 
 .ContactData {
   padding: 5px 0 80px 40px;
-  /* background-color: rgba(0, 0, 0, 0.7); */
   display: flex;
   flex-direction: column;
 }
@@ -86,7 +77,6 @@
 .ManifestCont {
   width: 30%;
   text-align: right;
-  /* padding: 30px; */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -96,9 +86,6 @@
   background-color: black;
   width: 100%;
   transform: translateY(32px);
-  /* transform: translateX(); */
-  /* position: relative; */
-  /* margin-right: 10px; */
   padding-bottom: 40px;
 }
 
@@ -107,7 +94,6 @@
   line-height: 1.2rem;
   color: black;
   text-align: left;
-  /* background-color: rgba(255, 255, 255, 0.9); */
   padding: 40px 15px 15px 0px;
   font-weight: 300;
 }

@@ -2,10 +2,6 @@
   position: fixed;
   z-index: 1001;
   height: 100vh;
-  /* height: 700px !important; */
-  /* width: 100%; */
-  /* margin: auto; */
-  /* background-color: rgba(0, 0, 0, 0.8); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,13 +12,9 @@
 
 .SliderMove {
   transform: translateX(0);
-  /* transition: all 0.7s ease-out; */
-  /* right: 0; */
 }
 
 .imgSlider {
-  /* background-repeat: "no-repeat";
-  background-position: "center"; */
   height: 500px;
   background-position: center;
   background-repeat: no-repeat;
@@ -36,26 +28,20 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  /* background-color: rgba(255, 255, 255, 0.8); */
   background-color: white;
   z-index: 1;
   overflow: scroll;
-
-  /* transition: all 1s ease-out; */
 }
 
 .Exitbtn {
   position: absolute;
   top: 0;
   left: 0;
-  /* margin: 2px; */
   font-size: 1.3rem;
-  /* border: 1px solid black; */
   color: white;
   background-color: black;
   padding: 3px 10px;
   font-family: "heebo";
-  /* font-weight: 300; */
   visibility: hidden;
 }
 
@@ -66,7 +52,6 @@
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
-  /* padding-top: 75px; */
 }
 
 .Description {
@@ -77,10 +62,6 @@
   color: black;
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-start; */
-  /* padding: 0 15px; */
-  /* transition: transform 2.5s ease-out;
-  transition: opacity 7s ease-out; */
 }
 
 .imgContainer {
@@ -89,7 +70,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* border: 5px solid black; */
 }
 
 .DescriptionAlt {
@@ -100,8 +80,6 @@
 .textContainer {
   height: 15%;
   text-align: right;
-  /* transition-delay: 1s; */
-  /* transition: opacity 1s cubic-bezier(0.2, 1.06, 0.97, 1.01); */
 }
 
 .textContainer h1 {
@@ -109,7 +87,6 @@
   padding-top: 15px;
   font-size: 2.5rem;
   font-weight: bold;
-  /* background-color: black; */
 }
 
 .Tags {
@@ -128,7 +105,6 @@
     display: block;
   }
   .Cont {
-    /* height: auto; */
     height: 100vh;
     flex-direction: column;
   }

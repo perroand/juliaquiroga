@@ -4,19 +4,6 @@ import classes from "./Slider.module.css";
 
 import { Carousel } from "react-responsive-carousel";
 import "../../../node_modules/react-responsive-carousel/lib/styles/carousel.css";
-// import "//src/main.scss";
-// import "//src/carousel.scss";
-// import "//src/examples/presentation/presentation.scss";
-
-// import Carousel from "flat-carousel";
-// import Carousel from "nuka-carousel";
-// import Slider from "react-animated-slider";
-// import "react-animated-slider/build/horizontal.css";
-
-// import AwesomeSlider from "react-awesome-slider";
-// import AwesomeSliderStyles from "react-awesome-slider/src/styled/scale-out-animation/scale-out-animation.scss";
-// import "react-awesome-slider/dist/custom-animations/scale-out-animation.css";
-// import "react-awesome-slider/dist/styles.css";
 
 const Slider = (props) => {
   const [imgArray, setImgArray] = useState([]);
@@ -28,7 +15,6 @@ const Slider = (props) => {
     } else {
       setImgArray(props.projArr.img);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.show]);
 
   let images = null;

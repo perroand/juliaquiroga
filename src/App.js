@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
-import Landing from "./components/Landing/Landing";
-import Projects from "./components/Projects/Projects";
-import Slider from "./components/Slider/Slider";
-import Backdrop from "./components/Slider/Backdrop/Backdrop";
-import Contact from "./components/Contact/Contact";
+import Landing from "./views/Landing/Landing";
+import Projects from "./views/Projects/Projects";
+import Slider from "./views/Slider/Slider";
+import Backdrop from "./views/Slider/Backdrop/Backdrop";
+import Contact from "./views/Contact/Contact";
 
 import projectList from "./hoc/projectList";
 
-import Navigator from "./components/Navigator/Navigator";
+import Navigator from "./views/Nav/Nav";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
@@ -23,7 +23,6 @@ function App() {
   });
   const [modalWidth, setModalWidth] = useState(null);
   const [projectsTop] = useState([]);
-  // const [offsetTop, setOffsetTop] = useState(0);
   const [colorNav, setColorNav] = useState(false);
   const [widthMobile, setWidthMobile] = useState(false);
 
@@ -32,7 +31,6 @@ function App() {
     if (width !== null) {
       setModalWidth(width);
     }
-    // projectsTop[name === "inSitu" ? 0 : 1] = top;
     if (name === "inSitu") {
       projectsTop[0] = top;
     } else if (name === "tabula") {
@@ -83,7 +81,6 @@ function App() {
         click={() => setShowModal(false)}
         top={projectsTop}
       />
-      {/* {selectedProj ? ( */}
       <Slider
         show={showModal}
         click={() => setShowModal(false)}
@@ -92,7 +89,6 @@ function App() {
         top={projectsTop}
         mobileArr={widthMobile}
       />
-      {/* ) : null} */}
       <Landing />
       <Projects
         sectionTitle="-obras-"

@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./Navigator.module.css";
+import classes from "./Nav.module.css";
 
 const navigator = (props) => {
   return (
